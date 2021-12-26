@@ -10,20 +10,29 @@ export default function Home() {
 
       <main className="main">
         <h1 className="title">
-          Tu connais la <a href="https://www.youtube.com/watch?v=PwEVM03P2rI">fougne ?</a>
+          Tu connais la{' '}
+          <a href="https://www.youtube.com/watch?v=PwEVM03P2rI">fougne ?</a>
         </h1>
         <img className="img" src="./assets/images/fougne.jpg" alt="" />
       </main>
 
       <style jsx>{`
         @keyframes dance {
-          0% { transform: scale(1); }
-          100% { transform: scale(0.1);  }
+          0% {
+            transform: scale(1);
+          }
+          100% {
+            transform: scale(0.1);
+          }
         }
 
         @keyframs rotation {
-          0% { transform: rotate(0); }
-          100% { transform: rotate(360deg); }
+          0% {
+            transform: rotate(0);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
         }
 
         .container {
