@@ -17,17 +17,17 @@ export default function Home() {
 
       <style jsx>{`
         @keyframes dance {
-          0% { transform: scale(1)  }
-          100% { transform: scale(0.1)  }
+          0% { transform: scale(1); }
+          100% { transform: scale(0.1);  }
         }
 
         @keyframs rotation {
-          0% { transform: rotate(0) }
-          100% { transform: rotate(360deg) }
+          0% { transform: rotate(0); }
+          100% { transform: rotate(360deg); }
         }
 
         .container {
-          min-height: 100vh;s
+          min-height: 100vh;
           padding: 0 0.5rem;
           display: flex;
           flex-direction: column;
