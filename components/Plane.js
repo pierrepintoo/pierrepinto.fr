@@ -21,8 +21,8 @@ const Plane = (props) => {
   }, [])
 
   const debugObject = {
-    depthColor: '#05ff9b',
-    surfaceColor: '#000'
+    depthColor: '#abffdf',
+    surfaceColor: '#324a41'
   }
 
   return (
@@ -31,7 +31,7 @@ const Plane = (props) => {
         {...props}
         ref={meshRef}
       >
-        <planeGeometry args={[20, 10, 128, 128]} />
+        <planeGeometry args={[20, 10, 512, 512]} />
         <shaderMaterial 
           color={hovered ? 'hotpink' : 'orange'}
           side={THREE.DoubleSide}
@@ -46,8 +46,8 @@ const Plane = (props) => {
               uBigWavesSpeed: { value: 2 },
               uDepthColor: { value: new THREE.Color(debugObject.depthColor) },
               uSurfaceColor: { value: new THREE.Color(debugObject.surfaceColor) },
-              uColorMultiplier: { value: 0.08 },
-              uColorOffset: { value: 5 }
+              uColorMultiplier: { value: 2 },
+              uColorOffset: { value: 0.0 }
             }
           }
         />

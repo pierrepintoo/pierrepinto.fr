@@ -86,9 +86,10 @@ void main() {
   float elevation = sin(modelPosition.x * uBigWavesFrequency.x + uTime * uBigWavesSpeed) *
                     sin(modelPosition.y * uBigWavesFrequency.y + uTime * uBigWavesSpeed) *
                     uBigWavesElevation;
+
+  elevation += abs(cnoise(vec3(modelPosition.xy, uTime * 0.2)));
   
   // Adding noised waves on first waves
-  elevation += cnoise(vec3(modelPosition.xy, uTime * 0.2));
 
   modelPosition.z += elevation;
 
