@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 import waterVertexShader from '@/shaders/water/vertex.glsl'
@@ -7,18 +7,14 @@ import waterFragmentShader from '@/shaders/water/fragment.glsl'
 const Plane = (props) => {
   // This reference gives us direct access to the THREE.Mesh object
   const meshRef = useRef()
+  
   // Hold state for hovered and clicked events
   const [hovered, hover] = useState(false)
 
-  useFrame((state, delta) => {
+  useFrame(({ mouse }, delta) => {
     meshRef.current.material.uniforms.uTime.value += delta
+    meshRef.current.material.uniforms.uBigWavesFrequency.value = new THREE.Vector2(mouse.x * 3 + 0.2, mouse.y * 3 + 0.2)
   })
-
-  useEffect(() => {
-    setTimeout(() => {
-      console.log(meshRef.current.material.uniforms.uTime.value)
-    }, 1000)
-  }, [])
 
   const debugObject = {
     depthColor: '#abffdf',
