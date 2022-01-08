@@ -7,13 +7,13 @@ import waterFragmentShader from '@/shaders/water/fragment.glsl'
 const Plane = (props) => {
   // This reference gives us direct access to the THREE.Mesh object
   const meshRef = useRef()
-  
+
   // Hold state for hovered and clicked events
   const [hovered, hover] = useState(false)
 
   useFrame(({ mouse }, delta) => {
     meshRef.current.material.uniforms.uTime.value += delta
-    meshRef.current.material.uniforms.uBigWavesFrequency.value = new THREE.Vector2(mouse.x * 3 + 0.2, mouse.y * 3 + 0.2)
+    meshRef.current.material.uniforms.uBigWavesFrequency.value = new THREE.Vector2(mouse.x + 0.2, mouse.y + 0.2)
   })
 
   const debugObject = {
