@@ -21,24 +21,34 @@ const Plane = (props) => {
     }, 1000)
   }, [])
 
+  const debugObject = {
+    depthColor: '#05ff9b',
+    surfaceColor: '#000'
+  }
+
   return (
     <>
       <mesh
         {...props}
         ref={meshRef}
       >
-        <planeGeometry args={[10, 5, 128, 128]} />
+        <planeGeometry args={[20, 10, 128, 128]} />
         <shaderMaterial 
           color={hovered ? 'hotpink' : 'orange'}
           side={THREE.DoubleSide}
           vertexShader={waterVertexShader}
           fragmentShader={waterFragmentShader}
-          wireframe={true}
+          wireframe={false}
           uniforms={
             { 
               uBigWavesElevation: { value: 0.2 },
-              uBigWavesFrequency: { value: new THREE.Vector2(4, 1.5) },
-              uTime: { value: 0 }
+              uBigWavesFrequency: { value: new THREE.Vector2(2, 1.5) },
+              uTime: { value: 0 },
+              uBigWavesSpeed: { value: 2 },
+              uDepthColor: { value: new THREE.Color(debugObject.depthColor) },
+              uSurfaceColor: { value: new THREE.Color(debugObject.surfaceColor) },
+              uColorMultiplier: { value: 0.08 },
+              uColorOffset: { value: 5 }
             }
           }
         />
