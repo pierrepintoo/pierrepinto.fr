@@ -3,7 +3,6 @@ import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 import waterVertexShader from '@/shaders/water/vertex.glsl'
 import waterFragmentShader from '@/shaders/water/fragment.glsl'
-import DatGui from 'react-dat-gui'
 
 const Plane = (props) => {
   // This reference gives us direct access to the THREE.Mesh object

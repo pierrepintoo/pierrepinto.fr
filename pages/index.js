@@ -1,8 +1,6 @@
 import Head from 'next/head'
-import { useEffect } from 'react'
-import { Canvas, useThree } from '@react-three/fiber'
+import { Canvas } from '@react-three/fiber'
 import Plane from '@/components/Plane'
-import Box from '@/components/Box'
 
 export default function Home() {
   return (
@@ -15,13 +13,13 @@ export default function Home() {
         camera={{
           fov: 75,
           near: 0.1,
-          position: [0, 0, 5]
+          position: [0, 0, 5],
         }}
       >
         <pointLight position={[0, 2, -5]} intensity={10} />
         <pointLight position={[10, 10, 10]} />
         {/* <Box position={[0, 0, 0]} /> */}
-        <Plane position={[0, 0, 0]}/>
+        <Plane position={[0, 0, 0]} />
       </Canvas>
 
       <style jsx>{`
